@@ -1,0 +1,16 @@
+{
+  "name": "drum-kit",
+  "version": "1.0.0",
+  "description": "A mini drum kit to play drum sounds with keyboard strokes",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd ./src/ && live-server"
+  },
+  "keywords": [
+    "drum-kit",
+    "javascript",
+    "vanilla"
+  ],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com> (https://github.com/npranto)",
+  "license": "ISC"
+}

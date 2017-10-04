@@ -1,0 +1,43 @@
+body {
+	background-color: lightgray;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+}
+* {
+	padding: 0px;
+	margin: 0px;
+}
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.key {
+	width: 75px;
+	height: 75px;
+	padding: 1.25%;
+	margin: 1.25%;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	border: 0.15em solid black;
+}
+.key p {
+	color: lightgray;
+}
+/*.playing {
+	border-color: red;
+	border-width: 0.25em;
+}
+.playing h1 {
+	color: red;
+}
+.playing p {
+	color: black;
+	font-weight: bold;
+}*/
+
