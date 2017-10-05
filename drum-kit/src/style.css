@@ -1,9 +1,9 @@
 body {
 	background-color: lightgray;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	height: 100vh;
 }
 * {
 	padding: 0px;
@@ -20,16 +20,17 @@ body {
 	padding: 1.25%;
 	margin: 1.25%;
 	background-color: white;
+	text-align: center;
+	border: 0.15em solid black;
+	transition: all 0.07s;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	text-align: center;
-	border: 0.15em solid black;
 }
 .key p {
 	color: lightgray;
 }
-/*.playing {
+.playing {
 	border-color: red;
 	border-width: 0.25em;
 }
@@ -39,5 +40,5 @@ body {
 .playing p {
 	color: black;
 	font-weight: bold;
-}*/
+}
 
