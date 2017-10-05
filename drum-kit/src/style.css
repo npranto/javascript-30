@@ -8,13 +8,20 @@ body {
 * {
 	padding: 0px;
 	margin: 0px;
+	font-family: 'Verdana';
 }
 .container {
+	padding: 1%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
+.title {
+	margin: 5%;
+	text-align: center;
+}
 .key {
+	border-radius: 10%;
 	width: 75px;
 	height: 75px;
 	padding: 1.25%;
@@ -22,7 +29,7 @@ body {
 	background-color: white;
 	text-align: center;
 	border: 0.15em solid black;
-	transition: all 0.07s;
+	transition: all 0.25s;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -31,14 +38,17 @@ body {
 	color: lightgray;
 }
 .playing {
+	background-color: red;
 	border-color: red;
 	border-width: 0.25em;
+	box-shadow: 0 0 10px white;
+	transform: scale(1.2);
 }
 .playing h1 {
-	color: red;
+	color: white;
 }
 .playing p {
-	color: black;
+	color: white;
 	font-weight: bold;
 }
 
