@@ -12,10 +12,10 @@ body {
 	width: 50vw;
 	height: 50vw;
 	background-image: url('./assets/analog-clock-bg.png');
-	background-size: cover;                     
-    background-repeat: no-repeat;
-    background-position: center center;
-    margin: 0 auto;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: 0 auto;
     border: 0.25em solid white;
     border-radius: 50%;
     display: flex;
