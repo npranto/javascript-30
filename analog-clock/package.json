@@ -1,0 +1,15 @@
+{
+  "name": "analog-clock",
+  "version": "1.0.0",
+  "description": "A simple analog clock, written in vanilla javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd ./src/ && live-server"
+  },
+  "keywords": [
+    "analog-clock",
+    "time"
+  ],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com> (https://github.com/npranto)",
+  "license": "ISC"
+}
