@@ -1,7 +1,13 @@
+function hideAnalogClock() {
+    document.querySelector('.frame').style.display = 'none';
+}
+
 function adjustFrame() {
+	// get width and height for current screen
 	let width = window.innerWidth;
 	let height = window.innerHeight;
 
+	// sets clock outline size in proportion to smaller size between current screen width or height
 	if (Number.isInteger(width) && Number.isInteger(height)) {
 		if (width < height) {
 			document.getElementById('outline').style.width = "50vw";
@@ -13,42 +19,59 @@ function adjustFrame() {
 	}
 }
 
-function startTime(argument) {
-
-	let secondsHand = document.querySelector('.second');
-	let minutesHand = document.querySelector('.minute');
-	let hoursHand = document.querySelector('.hour');
-
+function startTime(cb) {
+    // run every second
 	setInterval(function () {
-		
-		// get currrent time
+		// get current time
 		let now = new Date();
 
 		// get extract seconds, minutes, and hours value from current time
-		let seconds = now.getSeconds();
-		let minutes = now.getMinutes() + (seconds/60);
-		let hours = now.getHours() + (minutes/60) + (seconds/60)/60;
+		let currentSecond = now.getSeconds();
+		let currentMinute = now.getMinutes() + (currentSecond/60);
+		let currentHour = now.getHours() + (currentMinute/60) + ((currentSecond/60)/60);
+
+		console.log(currentSecond, currentMinute, currentHour);
 
 		// move seconds hand
-		let secondsDegreeRotation = ((seconds/60) * 360) + 90;
-		secondsHand.style.transform = `rotate(${secondsDegreeRotation}deg)`;
+		moveSecondsHand(currentSecond, document.querySelector('.second'));
 
 		// move minutes hand
-		let minutesDegreeRotation = ((minutes/60) * 360) + 90;
-		minutesHand.style.transform = `rotate(${minutesDegreeRotation}deg)`;
+		moveMinutesHand(currentMinute, document.querySelector('.minute'));
 
 		// move hours hand
-		let hoursDegreeRotation = ((hours/12) * 360) + 90;
-		hoursHand.style.transform = `rotate(${hoursDegreeRotation}deg)`;
+		moveHoursHand(currentHour, document.querySelector('.hour'));
 
+        cb();
 	}, 1000);
+}
 
+function moveSecondsHand (currentSecond, secondsHandElem) {
+    let secondsDegreeRotation = ((currentSecond/60) * 360) + 90;
+    secondsHandElem.style.transform = `rotate(${secondsDegreeRotation}deg)`;
+}
+
+function moveMinutesHand (currentMinute, minutesHandElem) {
+    let minutesDegreeRotation = ((currentMinute/60) * 360) + 90;
+    minutesHandElem.style.transform = `rotate(${minutesDegreeRotation}deg)`;
+}
+
+function moveHoursHand (currentHour, hoursHandElem) {
+    let hoursDegreeRotation = ((currentHour/12) * 360) + 90;
+    hoursHandElem.style.transform = `rotate(${hoursDegreeRotation}deg)`;
+}
+
+function displayAnalogClock() {
+    document.querySelector('.frame').style.display = 'block';
 }
 
 
 
+////////
+
+
+hideAnalogClock();
 adjustFrame();
-startTime();
+startTime(displayAnalogClock);
 
 
 
