@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: gray;
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+}
+* {
+    font-family: "Verdana";
+}
+.title {
+    text-align: center;
+}
+.container {
+    background: lightgray;
+    display: flex;
+    flex-direction: column;
+}
+.container section {
+    flex: 1 1 auto;
+    padding: 1%;
+}
+.container .controls {
+    background: gold;
+}
+.container .view {
+    background: lightgreen;
+}
+.container .view img {
+    width: 50%;
+    height: auto;
+    border: 1em solid red;
+}
