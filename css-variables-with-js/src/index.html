@@ -16,10 +16,26 @@
         <main class="container">
             <section class="controls">
                 <h3> Controls </h3>
+                <div class="control">
+                    <div class="each-control border-ctrl">
+                        <label for="border"> Border </label>
+                        <input type="range" name="border" min="0" max="5" value="5" data-unit="em">
+                    </div>
+                    <div class="each-control blur-ctrl">
+                        <label for="blur"> Blur </label>
+                        <input type="range" name="blur" min="0" max="25" value="10" data-unit="em">
+                    </div>
+                    <div class="each-control base-color-ctrl">
+                        <label for="base-color"> Base Color </label>
+                        <input type="color" name="base-color" value="#ff0000">
+                    </div>
+                </div>
             </section>
             <section class="view">
                 <h3> View </h3>
-                <img src="./assets/new-york-landscape.jpeg" alt="New York Landscape">
+                <div class="photo">
+                    <img src="./assets/new-york-landscape.jpeg" alt="New York Landscape">
+                </div>
             </section>
         </main>
 

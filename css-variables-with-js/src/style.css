@@ -28,8 +28,32 @@ body {
 .container .view {
     background: lightgreen;
 }
+.container .view .photo {
+    text-align: center;
+}
 .container .view img {
     width: 50%;
     height: auto;
-    border: 1em solid red;
+    /*border: 5em solid red;*/
+}
+.container .controls .control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container .controls .control .each-control {
+    padding: 0.5%;
+}
+
+
+/*CSS variables*/
+
+:root {
+    --border: "5em";
+    --blur: "10px";
+    --base-color: "#ff0000";
+}
+.container .view img {
+    border: var(--border) solid var(--base-color);
+    filter: blur(var(--blur));
 }
