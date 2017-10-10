@@ -1,0 +1,16 @@
+{
+  "name": "array-cardio",
+  "version": "1.0.0",
+  "description": "Brushing up and mastering array functional prototypical methods and its proper usage",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "keywords": [
+    "array",
+    "functional",
+    "prototype"
+  ],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com> (https://github.com/npranto)",
+  "license": "ISC"
+}
