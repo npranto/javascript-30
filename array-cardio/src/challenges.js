@@ -45,6 +45,55 @@ module.exports = {
     inventorsSortedByYearsLived(inventors) {
         return inventors.sort((prev, curr) => (prev.passed - prev.year) - (curr.passed - curr.year));
     },
+
+    /**
+     * Sort the inventors by last name
+     * @param inventors <Array>
+     * @returns <Array>
+     */
+    inventorsSortedByLastName(inventors) {
+        return inventors.sort((prev, curr) => {
+            return (prev.last < curr.last)
+                ? -1
+                : (prev.last > curr.last)
+                    ? 1
+                    : 0
+        });
+    },
+
+    /**
+     * Sort the people by last name
+     * @param inventors <Array>
+     * @returns <Array>
+     */
+    peopleSortedByLastName(people) {
+        return people.sort((prev, curr) => {
+            let getLastName = (name) => {
+                return name.split(',')[0].trim().toLowerCase();
+            }
+            return (getLastName(prev) < getLastName(curr))
+                ? -1
+                : (prev > curr)
+                    ? 1
+                    : 0
+        });
+    },
+
+    /**
+     * Sum up the instances of all of these transportation
+     * const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+     * @param inventors <Array>
+     * @returns <Array>
+     */
+    sumUpInstancesOfTransportation(data) {
+        return data.reduce((numberOfInstanceObject, currentObj) => {
+            if (!numberOfInstanceObject.hasOwnProperty(currentObj)) {
+                numberOfInstanceObject[currentObj] = 0;
+            }
+            numberOfInstanceObject[currentObj] += 1;
+            return numberOfInstanceObject;
+        }, {})
+    }
 }
 
 
