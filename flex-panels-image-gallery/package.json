@@ -1,0 +1,18 @@
+{
+  "name": "flex-panels-image-gallery",
+  "version": "1.0.0",
+  "description": "A flexible photo gallery that transforms layout and content with an action",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd ./src/ && live-server"
+  },
+  "keywords": [
+    "flexbox",
+    "javascript",
+    "photo",
+    "gallery",
+    "layout"
+  ],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com> (https://github.com/npranto)",
+  "license": "ISC"
+}

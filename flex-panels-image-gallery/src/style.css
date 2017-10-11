@@ -1,0 +1,50 @@
+.gallery {
+    height: 100vh;
+    width: 100vw;
+}
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Verdana";
+}
+.panels {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.panel {
+    flex: 1 0 auto;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    background-size:cover;
+    background-position:center;
+}
+.panel p {
+    color: whitesmoke;
+}
+.panel .bigger {
+    font-weight: bold;
+    font-size: 2.5em;
+}
+.panel .normal {
+    font-size: 1.5em;
+}
+.panel1 {
+    background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
+}
+.panel2 {
+    background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);
+}
+.panel3 {
+    background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);
+}
+.panel4 {
+    background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);
+}
+.panel5 {
+    background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
