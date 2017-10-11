@@ -39,4 +39,14 @@ const people = [
 // console.log( challenges.inventorsTotalYearsLived(inventors) );
 
 // Challenge 5: Sort the inventors by years lived
-console.log( challenges.inventorsSortedByYearsLived(inventors) );
+// console.log( challenges.inventorsSortedByYearsLived(inventors) );
+
+// Challenge 6: Sort the inventors by last name
+// console.log( challenges.inventorsSortedByLastName(inventors) );
+
+// Challenge 7: Sort the people by last name
+// console.log( challenges.peopleSortedByLastName(people) );
+
+// Challenge 8: Sum up the instances of all of these transportation
+// const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+// console.log( challenges.sumUpInstancesOfTransportation(data) );
