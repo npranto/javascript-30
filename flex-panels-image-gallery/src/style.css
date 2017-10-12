@@ -13,25 +13,26 @@
     height: 100%;
 }
 .panel {
-    flex: 1 0 auto;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     background-size:cover;
     background-position:center;
+    transition: all 0.5s;
 }
 .panel p {
     color: whitesmoke;
+    border: 1px solid red;
+}
+.panel .normal {
+    font-size: 1.5em;
+    display: none;
 }
 .panel .bigger {
     font-weight: bold;
     font-size: 2.5em;
-}
-.panel .normal {
-    font-size: 1.5em;
 }
 .panel1 {
     background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);
@@ -47,4 +48,12 @@
 }
 .panel5 {
     background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);
+}
+
+/*dynamic classes (gets applied or removed with actions through javascript) */
+.panel .slide-in {
+    display: block;
+}
+.panel-expand {
+    flex-grow: 3;
 }
