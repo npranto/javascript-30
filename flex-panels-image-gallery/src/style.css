@@ -20,15 +20,19 @@
     text-align: center;
     background-size:cover;
     background-position:center;
-    transition: all 0.5s;
+    transition: all 0.7s;
 }
 .panel p {
     color: whitesmoke;
-    border: 1px solid red;
+    transition: all 0.5s;
 }
 .panel .normal {
     font-size: 1.5em;
     display: none;
+    font-family: "AppleGothic";
+    font-weight: 100;
+    font-style: italic;
+    color: lightgray;
 }
 .panel .bigger {
     font-weight: bold;
@@ -51,9 +55,16 @@
 }
 
 /*dynamic classes (gets applied or removed with actions through javascript) */
-.panel .slide-in {
+.panel-expand .slide-in {
     display: block;
 }
+.fade-out {
+    opacity: 0.3;
+}
 .panel-expand {
-    flex-grow: 3;
+    flex-grow: 5;
+}
+.panel-expand .bigger {
+    font-size: 5em;
+    opacity: 2;
 }
