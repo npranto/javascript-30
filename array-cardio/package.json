@@ -4,7 +4,8 @@
   "description": "Brushing up and mastering array functional prototypical methods and its proper usage",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js"
+    "day1": "node ./src/day1/index.js",
+    "day2": "node ./src/day2/index.js"
   },
   "keywords": [
     "array",
