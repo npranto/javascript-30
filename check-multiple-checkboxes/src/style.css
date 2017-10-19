@@ -1,10 +1,12 @@
 body {
     background: lightgray;
-    padding: 1%;
+    padding: 0px;
+    margin: 0px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100vh;
+    overflow: auto;
 }
 * {
     font-family: "Verdana";
@@ -21,6 +23,8 @@ body {
      align-content: center;
      align-items: center;
      margin: 0 auto;
+     max-height: 80vh;
+     overflow: auto
 }
 .list-item {
     display: flex;
@@ -38,4 +42,7 @@ body {
     justify-content: flex-start;
     padding-left: 1.5%;
     padding-right: 1.5%;
+}
+.strikethrough {
+    text-decoration: line-through;
 }
