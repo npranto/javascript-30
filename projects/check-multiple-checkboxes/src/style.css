@@ -10,6 +10,7 @@ body {
 }
 * {
     font-family: "Verdana";
+    transition: all 0.5s;
 }
 :root {
     --containerWidth: 50vw;
@@ -19,7 +20,7 @@ body {
 }
 .container {
      width: var(--containerWidth);
-     background: gold;
+     background: white;
      align-content: center;
      align-items: center;
      margin: 0 auto;
@@ -45,4 +46,6 @@ body {
 }
 .strikethrough {
     text-decoration: line-through;
+    color: lightgray;
+    text-decoration-color: lightgray;
 }
