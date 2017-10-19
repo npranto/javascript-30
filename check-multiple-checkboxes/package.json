@@ -1,0 +1,16 @@
+{
+  "name": "check-multiple-checkboxes",
+  "version": "1.0.0",
+  "description": "A tiny feature to select multiple items in a list and check all of them at once",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd ./src/ && live-server"
+  },
+  "keywords": [
+    "checkbox",
+    "multiple",
+    "todo-like"
+  ],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com>",
+  "license": "ISC"
+}
