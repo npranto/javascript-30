@@ -4,7 +4,7 @@ Brushing up and mastering array functional prototypical methods and its proper u
 
 ## Technologies
 <div align="left">
-  <img src="./techs/javascript.png" width="200px" hspace="10" title="JavaScript" />
+  <img src="./../../assets/techs/javascript.png" width="200px" hspace="10" title="JavaScript" />
 </div>
  
 ## Author
