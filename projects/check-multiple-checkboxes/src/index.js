@@ -57,6 +57,8 @@ let addEventListenerForCheckboxes = (todos) => {
             let currentTodoIndex = parseInt(checkbox.dataset.todoindex);
             todos[currentTodoIndex].completed = !todos[currentTodoIndex].completed;
             console.log(store.todos);
+
+            // check for multiple checkboxes checked
         })
     })
 }
