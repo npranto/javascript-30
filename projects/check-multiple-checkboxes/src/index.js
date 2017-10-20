@@ -22,10 +22,6 @@ let todos = [
 ];
 
 let run = () => {
-    // let promiseForDisplayingTodos = new Promise((resolve, reject) => {
-    //     displayTodos();
-    //     true ? resolve(true) : reject(false);
-    // });
 
     new Promise((resolve, reject) => {
         displayTodos();
@@ -52,6 +48,9 @@ let addEventListenerForCheckboxes = () => {
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('click', () => {
             toggleContentStrikethrough(checkbox);
+            console.log(checkbox.dataset);
+            let currentTodoIndex = parseInt(checkbox.dataset.todoindex);
+            todos[currentTodoIndex].completed = !todos[currentTodoIndex].completed;
         })
     })
 }
@@ -64,7 +63,7 @@ let displayTodos = () => {
         return `
             <div class="list-item">
                 <div class="checkbox-container">
-                    <input class="check-box" id="checkbox${index}" type="checkbox" />
+                    <input class="check-box" id="checkbox${index}" data-todoindex=${index} type="checkbox" />
                 </div>
                 <p id="checkbox${index}-content"> ${todo.todo} </p>
             </div>
