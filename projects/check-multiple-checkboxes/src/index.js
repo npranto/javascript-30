@@ -24,7 +24,9 @@ let todos = [
 let run = () => {
 
     new Promise((resolve, reject) => {
+        adjustContainerWidth();
         displayTodos();
+        addListenerForNewTodo();
         true ? resolve(true) : reject(false);
     }).then((done) => {
         if (done) {
@@ -32,6 +34,16 @@ let run = () => {
         }
     }).catch((err) => console.error(err));
 
+}
+
+let getContainerWidthBasedOnWindowWidth = (windowWidth) => {
+    return Math.floor( (-4/100) * (windowWidth) + 102 );
+}
+
+let adjustContainerWidth = () => {
+    let windowWidth = window.innerWidth;
+    let containerWidth = getContainerWidthBasedOnWindowWidth(windowWidth);
+    document.documentElement.style.setProperty(`--containerWidth`, `${containerWidth}vw`);
 }
 
 let toggleContentStrikethrough = (checkbox) => {
@@ -71,6 +83,18 @@ let displayTodos = () => {
     })
 
     containerElem.innerHTML = todosToHtml.join('\n');
+
+}
+
+let enterIsPressed = (key) => {
+    if (key === 13) {
+        return true;
+    }
+}
+
+let addListenerForNewTodo = () => {
+
+    const newTodoForm = document.querySelector('.new-todo-form form');
 
 }
 
