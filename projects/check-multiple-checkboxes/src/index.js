@@ -1,39 +1,33 @@
-let todos = [
-    {
-        todo: 'Apple',
-        completed: false
-    },
-    {
-        todo: 'Oranges',
-        completed: false
-    },
-    {
-        todo: 'Coffee',
-        completed: false
-    },
-    {
-        todo: 'Get 2 regular milk',
-        completed: false
-    },
-    {
-        todo: 'The life of a human being is very important for anyone, so we should all value it greatly as many in the past have',
-        completed: false
-    }
-];
+let store = {
+    todos: [
+        {
+            todo: 'Apple',
+            completed: false
+        },
+        {
+            todo: 'Oranges',
+            completed: false
+        },
+        {
+            todo: 'Coffee',
+            completed: false
+        },
+        {
+            todo: 'Get 2 regular milk',
+            completed: false
+        },
+        {
+            todo: 'The life of a human being is very important for anyone, so we should all value it greatly as many in the past have',
+            completed: false
+        }
+    ]
+}
 
 let run = () => {
-
-    new Promise((resolve, reject) => {
-        adjustContainerWidth();
-        displayTodos();
-        addListenerForNewTodo();
-        true ? resolve(true) : reject(false);
-    }).then((done) => {
-        if (done) {
-            addEventListenerForCheckboxes();
-        }
-    }).catch((err) => console.error(err));
-
+    adjustContainerWidth();
+    displayTodos(store.todos);
+    addEventListenerForCheckboxes(store.todos);
+    addListenerForNewTodo(store.todos);
 }
 
 let getContainerWidthBasedOnWindowWidth = (windowWidth) => {
@@ -55,19 +49,19 @@ let toggleContentStrikethrough = (checkbox) => {
     
 }
 
-let addEventListenerForCheckboxes = () => {
+let addEventListenerForCheckboxes = (todos) => {
     const checkboxes = document.querySelectorAll('.list-item .checkbox-container .check-box');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('click', () => {
             toggleContentStrikethrough(checkbox);
-            console.log(checkbox.dataset);
             let currentTodoIndex = parseInt(checkbox.dataset.todoindex);
             todos[currentTodoIndex].completed = !todos[currentTodoIndex].completed;
+            console.log(store.todos);
         })
     })
 }
 
-let displayTodos = () => {
+let displayTodos = (todos) => {
 
     const containerElem = document.querySelector('.container');
 
@@ -92,12 +86,48 @@ let enterIsPressed = (key) => {
     }
 }
 
-let addListenerForNewTodo = () => {
+let serializeFormFields = (form) => {
+    let fields = form.querySelectorAll('input');
+    let formFieldsSerialized = {};
+    fields.forEach((field) => {
+        formFieldsSerialized[field.name] = field.value;
+    })
+    return formFieldsSerialized;
+}
+
+let clearFormFields = (form) => {
+    let fields = form.querySelectorAll('input');
+    fields.forEach((field) => {
+        field.value = '';
+    })
+}
+
+let addNewTodo = (newTodo, todos) => {
+    todos.unshift({
+        todo: newTodo,
+        completed: false
+    });
+    return todos;
+}
+
+let addListenerForNewTodo = (todos) => {
 
     const newTodoForm = document.querySelector('.new-todo-form form');
 
-}
+    newTodoForm.addEventListener('keypress', (e) => {
+        let key = e.charCode || e.keyCode || 0;
+        if (enterIsPressed(key)) {
+            let formFieldsObject = serializeFormFields(newTodoForm);
+            // add new item to todos array
+            todos = addNewTodo(formFieldsObject.newtodocontent, todos);
+            displayTodos(todos);
+            addEventListenerForCheckboxes(todos);
+            clearFormFields(newTodoForm);
+            e.preventDefault();
+        }
+    })
 
+}
 
 
 

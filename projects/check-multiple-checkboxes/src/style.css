@@ -1,6 +1,6 @@
 body {
     background: lightgray;
-    padding: 0px;
+    margin: 1% 0%;
     margin: 0px;
     display: flex;
     flex-direction: column;
@@ -27,9 +27,13 @@ body {
 .new-todo-field {
     text-align: center;
 }
+.field-title {
+    font-style: italic;
+    color: lightslategray;
+}
 .new-todo-field input {
     width: 50%;
-    min-height: 40px;
+    min-height: 30px;
     padding: 1%;
     font-size: 1em;
 }
@@ -51,6 +55,7 @@ body {
 }
 .list-item p {
     margin: 0px;
+    padding-right: 1.5%;
 }
 .checkbox-container {
     display: flex;
