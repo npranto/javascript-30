@@ -20,14 +20,19 @@ let store = {
             todo: 'The life of a human being is very important for anyone, so we should all value it greatly as many in the past have',
             completed: false
         }
-    ]
+    ],
+    multipleChecks: {
+        enabled: false,
+        index: -1
+    },
 }
 
 let run = () => {
     adjustContainerWidth();
     displayTodos(store.todos);
-    addEventListenerForCheckboxes(store.todos);
-    addListenerForNewTodo(store.todos);
+    addEventListenerForCheckboxes(store.todos, store.multipleChecks);
+    addEventListenerForMultipleChecks(store.multipleChecks);
+    addListenerForNewTodo(store.todos, store.multipleChecks);
 }
 
 let getContainerWidthBasedOnWindowWidth = (windowWidth) => {
@@ -46,20 +51,65 @@ let toggleContentStrikethrough = (checkbox) => {
         const getCheckBoxContentElem = document.getElementById(`${getCheckBoxId}-content`);
         getCheckBoxContentElem.classList.toggle('strikethrough');
     }
-    
 }
 
-let addEventListenerForCheckboxes = (todos) => {
+let addEventListenerForCheckboxes = (todos, multipleChecks) => {
     const checkboxes = document.querySelectorAll('.list-item .checkbox-container .check-box');
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('click', () => {
-            toggleContentStrikethrough(checkbox);
-            let currentTodoIndex = parseInt(checkbox.dataset.todoindex);
-            todos[currentTodoIndex].completed = !todos[currentTodoIndex].completed;
-            console.log(store.todos);
 
-            // check for multiple checkboxes checked
+            console.log(multipleChecks);
+
+            if ((multipleChecks.enabled) && (multipleChecks.index !== -1)) {
+                let currentTodoIndex = parseInt(checkbox.dataset.todoindex);
+                if (currentTodoIndex < multipleChecks.index) {
+
+                    for (let i=currentTodoIndex; i<multipleChecks.index; i++) {
+                        const todoElem = document.getElementById(`checkbox${i}`);
+                        todoElem.setAttribute('checked', true);
+                        toggleContentStrikethrough(todoElem);
+                        let currentTodoIndex = parseInt(todoElem.dataset.todoindex);
+                        todos[currentTodoIndex].completed = !todos[currentTodoIndex].completed;
+                    }
+
+                } else {
+
+                    for (let i=multipleChecks.index+1; i<=currentTodoIndex; i++) {
+                        const todoElem = document.getElementById(`checkbox${i}`);
+                        todoElem.setAttribute('checked', true);
+                        toggleContentStrikethrough(todoElem);
+                        let currentTodoIndex = parseInt(todoElem.dataset.todoindex);
+                        todos[currentTodoIndex].completed = !todos[currentTodoIndex].completed;
+                    }
+                }
+            } else {
+                toggleContentStrikethrough(checkbox);
+                let currentTodoIndex = parseInt(checkbox.dataset.todoindex);
+                todos[currentTodoIndex].completed = !todos[currentTodoIndex].completed;
+                multipleChecks.index = currentTodoIndex;
+            }
+            console.log(store.todos);
         })
+    })
+}
+
+let addEventListenerForMultipleChecks = (multipleChecks) => {
+    window.addEventListener('keydown', (e) => {
+        let key = e.keyCode;
+        if (key === 16) {
+            multipleChecks.enabled = !multipleChecks.enabled;
+        }
+        console.log(store.multipleChecks.enabled);
+        console.log(store.multipleChecks.index);
+    })
+    window.addEventListener('keyup', (e) => {
+        let key = e.keyCode;
+        if (key === 16) {
+            multipleChecks.enabled = !multipleChecks.enabled;
+            multipleChecks.index = -1;
+        }
+        console.log(store.multipleChecks.enabled);
+        console.log(store.multipleChecks.index);
     })
 }
 
@@ -112,7 +162,7 @@ let addNewTodo = (newTodo, todos) => {
     return todos;
 }
 
-let addListenerForNewTodo = (todos) => {
+let addListenerForNewTodo = (todos, multipleChecks) => {
 
     const newTodoForm = document.querySelector('.new-todo-form form');
 
@@ -123,7 +173,7 @@ let addListenerForNewTodo = (todos) => {
             // add new item to todos array
             todos = addNewTodo(formFieldsObject.newtodocontent, todos);
             displayTodos(todos);
-            addEventListenerForCheckboxes(todos);
+            addEventListenerForCheckboxes(todos, multipleChecks);
             clearFormFields(newTodoForm);
             e.preventDefault();
         }
