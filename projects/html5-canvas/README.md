@@ -2,7 +2,7 @@
 
 A simple mouse controlled painting application with different colors
 
-[]()
+[Try it out!](http://javascript-30-html5-canvas.surge.sh/)
 
 ## Technologies
 <div align="left">
