@@ -4,7 +4,7 @@
   "description": "A simple mouse controlled painting application with different colors",
   "main": "index.js",
   "scripts": {
-    "start": "cd src/ && live-server"
+    "start": "cd ./src/ && live-server"
   },
   "keywords": [
     "paint",
