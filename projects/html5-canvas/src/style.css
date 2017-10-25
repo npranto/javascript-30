@@ -1,5 +1,15 @@
-body{
+body {
     background: lightgray;
-    width: 100vw;
-    padding: 100vh;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
 }
+* {
+    font-family: Verdana;
+}
+canvas {
+    margin: 0px;
+    padding: 0px;
+}
+
+
