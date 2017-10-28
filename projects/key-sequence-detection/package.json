@@ -1,0 +1,19 @@
+{
+  "name": "key-sequence-detection",
+  "version": "1.0.0",
+  "description": "A key sequence listener to show cornify stickers on a page",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd ./src/ && live-server"
+  },
+  "keywords": [
+    "key",
+    "sequence",
+    "detertor",
+    "listener",
+    "cornify",
+    "sticker"
+  ],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com> (https://github.com/npranto)",
+  "license": "ISC"
+}
