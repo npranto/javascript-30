@@ -1,0 +1,15 @@
+{
+  "name": "slide-in-on-scroll",
+  "version": "1.0.0",
+  "description": "A quick demo of content slide in while scrolling down a page",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd src/ && live-server"
+  },
+  "keywords": [
+    "scroll",
+    "slide-down"
+  ],
+  "author": "Nazmuz Shakib Pranto <npranto@gmail.com> (https://github.com/npranto)",
+  "license": "ISC"
+}

@@ -1,0 +1,11 @@
+body {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+header h1 {
+    text-align: center;
+}
+p{
+    text-align: justify;
+    font-size: 1.25em;
+}
