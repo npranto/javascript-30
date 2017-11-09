@@ -9,3 +9,22 @@ p{
     text-align: justify;
     font-size: 1.25em;
 }
+img {
+    margin: 1%;
+}
+
+.initial-setup {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: scale(0.95);
+}
+.initial-setup .left {
+    transform: translateX(-100%)
+}
+.initial-setup .right {
+    transform: translateX(100%)
+}
+.active-slide-in {
+    transform: translateX(0%) scale(1);;
+    opacity: 1;
+}
